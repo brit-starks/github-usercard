@@ -24,6 +24,17 @@
           user, and adding that card to the DOM.
 */
 
+const call = axios.get('https://api.github.com/users/brit-starks')
+
+.then(myData => {
+  console.log(myData);
+  return myData;
+})
+
+.catch(err => {
+  console.log('You\'re off..', err);
+})
+
 const followersArray = [];
 
 /* Step 3: Create a function that accepts a single object as its only argument,
@@ -43,8 +54,45 @@ const followersArray = [];
     <p>Bio: {users bio}</p>
   </div>
 </div>
-
 */
+
+
+class Cards {
+  constructor(){
+
+  }
+
+  createUserCard(userUrl) {
+
+    const card = document.createElement('div');
+    card.classList.add('card');
+
+    const userImg = document.createElement('img');
+    userImg.classList.add('card img');
+
+      const info = document.createElement('div');
+      info.classList.add('card-info');
+
+      const h3Name = document.createElement('h3');
+      h3Name.classList.add('name');
+
+      const userName = document.createElement('p');
+      userName.classList.add('username');
+
+      const location = document.createElement('p');
+
+      const profileUrl = document.createElement('p');
+
+      const followers = document.createElement('p');
+
+      const following = document.createElement('p');
+
+      const bio = document.createElement('p');
+
+  }
+}
+
+
 
 /* List of LS Instructors Github username's: 
   tetondan
